@@ -55,7 +55,7 @@ const countVowels = (str) => {
     return [...str].filter(char => vowels.includes(char)).length;
 };
 
-console.log(countVowels("Привіт, як справи?"));
+console.log(countVowels("Привіт, мене звати Кирило"));
 
 // 6
 function power(base, exponent) {
