@@ -1,0 +1,50 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    color: #333;
+}
+
+#clock {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#countdown, #birthday, #calendar {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#calendarDisplay {
+    margin-top: 20px;
+    font-size: 16px;
+    white-space: pre-wrap;
+}

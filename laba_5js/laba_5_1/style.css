@@ -1,0 +1,44 @@
+﻿body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.lamp {
+    width: 100px;
+    height: 150px;
+    margin: 20px auto;
+    background-color: gray;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.lamp.on {
+    background-color: yellow;
+}
+
+.lamp.led {
+    background-color: lightblue;
+}
+
+.lamp.led.on {
+    background-color: gold;
+}
+
+.lamp.energy-saving {
+    background-color: lightgreen;
+}
+
+.lamp.energy-saving.on {
+    background-color: green;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
