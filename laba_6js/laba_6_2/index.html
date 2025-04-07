@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List (Функціональний стиль)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Мій Список Завдань</h1>
+
+  <div class="input-section">
+    <input type="text" id="newTask" placeholder="Додати нове завдання" required>
+    <button id="addTaskBtn">Додати</button>
+  </div>
+
+  <div class="controls">
+    <label for="sortBy">Сортувати за:</label>
+    <select id="sortBy">
+      <option value="added">Датою додавання</option>
+      <option value="status">Станом виконання</option>
+      <option value="updated">Датою оновлення</option>
+    </select>
+  </div>
+
+  <ul id="taskList">
+  </ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

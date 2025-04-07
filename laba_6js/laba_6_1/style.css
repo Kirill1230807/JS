@@ -1,0 +1,212 @@
+﻿body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    font-weight: bold;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Створюємо 3 колонки однакової ширини */
+    gap: 20px;
+}
+
+.empty-list-message {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 450px; /* Задайте бажану максимальну висоту */
+}
+
+.product-card.removing {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 3px;
+    object-fit: contain;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.snackbar {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 20px;
+    bottom: 30px;
+    font-size: 14px;
+}
+
+.snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.filter-sort-controls {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-sort-controls > div {
+    display: flex;
+    gap: 5px;
+}
+
+.filter-sort-controls button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.filter-sort-controls button.active {
+    background-color: #e0e0e0;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-sort-controls > div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
