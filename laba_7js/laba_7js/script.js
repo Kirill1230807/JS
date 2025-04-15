@@ -1,11 +1,11 @@
-﻿'use strict';
+startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', restartGame);
+nextButton.addEventListener('click', nextLevel)
 
 var level = 1,
     timeToDuel = Math.floor(Math.random() * 1000) + 100,
-    timeToDuel = 700,
-    readyToDuel = 'false',
-    time,
-    score,
+    timeToDuel = 1000,
+    readyToDuel = 'false', time, score,
     startButton = document.querySelector('.button-start-game'),
     restartButton = document.querySelector('.button-restart'),
     nextButton = document.querySelector('.button-next-level'),
@@ -25,10 +25,6 @@ var level = 1,
     sfxShot = new Audio('sfx/shot.m4a'),
     sfxWin = new Audio('sfx/win.m4a'),
     sfxDeath = new Audio('sfx/death.m4a');
-
-startButton.addEventListener('click', startGame);
-restartButton.addEventListener('click', restartGame);
-nextButton.addEventListener('click', nextLevel)
 
 function startGame() {
     gameMenu.style.display = 'none';
@@ -109,7 +105,7 @@ function prepareForDuel() {
     }, 1000);
 }
 
-function timeCounter(t) { // add time counter function
+function timeCounter(t) {
     var currTime;
     (function timeCompare() {
         currTime = new Date().getTime();
